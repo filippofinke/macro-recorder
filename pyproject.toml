@@ -38,7 +38,7 @@ build-backend = "setuptools.build_meta"
 version_toml = ["pyproject.toml:project.version"]
 branch = "main"
 commit_message = "chore(release): {version}"
-build_command = "uv build"
+build_command = "pip install build && python -m build"
 
 [tool.semantic_release.changelog]
 changelog_file = "CHANGELOG.md"
