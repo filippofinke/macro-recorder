@@ -1,0 +1,49 @@
+[project]
+name = "macro-recorder"
+version = "0.1.0"
+description = "Record and playback mouse macros"
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Filippo Finke", email = "filippofinke@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pynput>=1.8.1",
+    "rich>=14.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.8.0",
+    "mypy>=1.14.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/filippofinke/macro-recorder"
+Repository = "https://github.com/filippofinke/macro-recorder"
+Issues = "https://github.com/filippofinke/macro-recorder/issues"
+
+[project.scripts]
+macro-recorder = "macro_recorder.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:project.version"]
+branch = "main"
+commit_message = "chore(release): {version}"
+build_command = "uv build"
+
+[tool.semantic_release.changelog]
+changelog_file = "CHANGELOG.md"
+
+[tool.semantic_release.commit_parser_options]
+allowed_tags = ["feat", "fix", "docs", "style", "refactor", "perf", "test", "build", "ci", "chore"]
+minor_tags = ["feat"]
+patch_tags = ["fix", "perf"]
