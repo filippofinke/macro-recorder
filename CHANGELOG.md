@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.1.2 (2026-01-06)
+
+### Bug Fixes
+
+- Ci remove unnecessary build step
+  ([`42d54c8`](https://github.com/filippofinke/macro-recorder/commit/42d54c8dc73f028bfdd5a5b5d287212fcd077361))
+
+
 ## v0.1.1 (2026-01-06)
 
 ### Bug Fixes
