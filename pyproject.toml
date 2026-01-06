@@ -1,6 +1,6 @@
 [project]
 name = "macro-recorder"
-version = "0.1.0"
+version = "0.1.1"
 description = "Record and playback mouse macros"
 readme = "README.md"
 license = "MIT"

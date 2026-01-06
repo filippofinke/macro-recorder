@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.1.1 (2026-01-06)
+
+### Bug Fixes
+
+- Type check
+  ([`449a0da`](https://github.com/filippofinke/macro-recorder/commit/449a0da5f783c0213508adf765701bccc53d255d))
+
+
 ## v0.1.0 (2026-01-06)
 
 ### Bug Fixes
