@@ -1,5 +1,5 @@
 from rich.console import Console
-from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskProgressColumn, TimeRemainingColumn
+from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskProgressColumn, TimeRemainingColumn, TaskID
 
 from macro_recorder.models.recording import Recording
 from macro_recorder.observers.playback_observer import PlaybackObserver
@@ -9,7 +9,7 @@ class PlaybackUI(PlaybackObserver):
     def __init__(self, console: Console):
         self.console = console
         self._progress: Progress | None = None
-        self._task_id = None
+        self._task_id: TaskID | None = None
         self._iteration = 0
         self._total_iterations = 0
 

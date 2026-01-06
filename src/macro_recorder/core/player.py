@@ -92,7 +92,7 @@ class MacroPlayer:
             iteration += 1
             self._notify_iteration(iteration, self.repeat)
 
-            last_timestamp = 0
+            last_timestamp: float = 0.0
 
             for i, event in enumerate(events):
                 if self._stop_event.is_set():
@@ -108,7 +108,7 @@ class MacroPlayer:
 
                 if event.event_type == EventType.MOVE:
                     self._mouse.position = (event.x, event.y)
-                elif event.event_type == EventType.CLICK:
+                elif event.event_type == EventType.CLICK and event.button:
                     button = getattr(Button, event.button)
                     self._mouse.position = (event.x, event.y)
                     if event.pressed:

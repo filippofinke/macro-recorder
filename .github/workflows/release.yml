@@ -10,7 +10,11 @@ permissions:
   pull-requests: write
 
 jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml
+
   release:
+    needs: ci
     runs-on: ubuntu-latest
     concurrency: release
 
@@ -27,7 +31,10 @@ jobs:
         run: uv python install
 
       - name: Install dependencies
-        run: uv sync --dev
+        run: uv sync --all-extras
+
+      - name: Clean dist folder
+        run: rm -rf dist/
 
       - name: Python Semantic Release
         id: release
